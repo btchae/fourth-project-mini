@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :startgame, :mudkip, :treecko, :torchic, :secretbase, :littleroot, :r101, :oldale_town, :r103]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :startgame, :mudkip, :treecko, :torchic, :secretbase, :littleroot, :r101, :r101_capture, :oldale_town, :r103]
   def index
     @users = User.all
   end
@@ -126,13 +126,16 @@ class UsersController < ApplicationController
     uri = "http://pokeapi.co/api/v2/pokemon/"+encounter
     response = HTTParty.get(uri)
     puts response["name"]
+    @user.pokemons.create(name: response["name"], level: 2, species: response["species"], types: response["types"][0]["type"]["name"])
     @first_random = response
   end
   def oldale_town
     @user.location = "oldale_town"
+    @user.save
   end
   def r103
     @user.location = "r103"
+    @user.save
   end
   def r102
   end
