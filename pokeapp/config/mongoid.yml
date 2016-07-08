@@ -5,7 +5,12 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: pokeapp_development || MONGODB_URI
+      database: pokeapp_development
+      production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+  max_retries_on_connection_failure: 20
+  persist_in_safe_mode: true
+  skip_version_check: true
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
