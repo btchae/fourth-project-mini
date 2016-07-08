@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :startgame, :mudkip, :treecko, :torchic, :secretbase, :littleroot, :r101, :r101_capture, :oldale_town, :r103]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :startgame, :mudkip, :treecko, :torchic, :secretbase, :littleroot, :r101, :r101_capture, :oldale_town, :r103, :r102, :petalburg_city]
   def index
     @users = User.all
   end
@@ -7,13 +7,6 @@ class UsersController < ApplicationController
   end
   def new
     @user = User.new
-    uri = "http://pokeapi.co/api/v2/pokemon/mudkip"
-    response = HTTParty.get(uri)
-    puts '-----------------------------------'
-    puts response["name"]
-    puts '-----------------------------------'
-    mudkipz = response["name"]
-    @mudkip = mudkipz
   end
   def create
     @user = User.new(user_params)
@@ -138,8 +131,12 @@ class UsersController < ApplicationController
     @user.save
   end
   def r102
+    @user.location = "r102"
+    @user.save
   end
   def petalburg_city
+    @user.location = "petalburg_city"
+    @user.save
   end
   def r104
   end
