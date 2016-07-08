@@ -126,7 +126,7 @@ class UsersController < ApplicationController
     uri = "http://pokeapi.co/api/v2/pokemon/"+encounter
     response = HTTParty.get(uri)
     puts response["name"]
-    @user.pokemons.create(name: response["name"], level: 2, species: response["species"], types: response["types"][0]["type"]["name"])
+    @user.pokemons.create(name: response["name"], wild: false, level: 2, species: response["species"], types: response["types"][0]["type"]["name"], sex: 'm')
     @first_random = response
   end
   def oldale_town

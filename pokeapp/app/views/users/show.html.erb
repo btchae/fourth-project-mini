@@ -3,7 +3,7 @@
 <%else%>
   <p><%=@user.name%>'s team:</p>
   <%@user.pokemons.each do |pokemon|%>
-    <a href='/pokemons/<%=pokemon.id%>'><%=pokemon.nickname%></a>
+    <a href='/pokemons/<%=pokemon.id%>'><%=pokemon.name%></a>
   <%end%>
   <br>
   <a href='/users/<%=@user.id%>/<%=@user.location%>'>Back to game</a>

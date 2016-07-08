@@ -6,6 +6,6 @@ Pokedex Entry: <%=@pokemon.description%>
 <br>
 Trainer: <a href="/users/<%=@pokemon.user.id%>"><%=@pokemon.user.name%></a>
 <br>
- <a href='/users/<%=@user.id%>/<%=@user.location%>'>Back to game</a>
+ <a href='/users/<%=@pokemon.user.id%>/<%=@pokemon.user.location%>'>Back to game</a>
  <br>
 <%= button_to "Release", pokemon_path(:id => @pokemon.id), :method => :delete %>
