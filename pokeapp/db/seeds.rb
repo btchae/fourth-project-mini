@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Pokemon.delete_all
+User.delete_all
+user1 = User.create(name: 'Red')
+user1.pokemons.create(name: 'Zigzagoon', nickname: 'ziggy', wild: false, species: 'Zigzagoon', types: ['Normal'])
+Pokemon.create(name: 'Bidoof')
