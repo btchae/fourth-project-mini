@@ -3,7 +3,7 @@ development:
   clients:
     # Defines the default client. (required)
     default: 
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      # uri: <%= ENV['MONGOHQ_URL'] %>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: pokeapp_development
