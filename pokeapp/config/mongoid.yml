@@ -3,7 +3,7 @@ development:
   clients:
     # Defines the default client. (required)
     default: 
-      # uri: <%= ENV['MONGOHQ_URL'] %>
+      uri: <%= ENV['MONGOHQ_URL'] %>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: pokeapp_development
@@ -24,10 +24,10 @@ development:
         #   mode: :secondary_preferred
 
         # The name of the user for authentication.
-        # user: 'user'
+        user: <%= ENV['MONGOUSERNAME'] %>
 
         # The password of the user for authentication.
-        # password: 'password'
+        password: <%= ENV['MONGOPASSWORD'] %>
 
         # The user's database roles.
         # roles:
