@@ -28,6 +28,3 @@ module Pokeapp
     # config.i18n.default_locale = :de
   end
 end
- config.generators do |g|
-   g.orm :mongoid
- end
