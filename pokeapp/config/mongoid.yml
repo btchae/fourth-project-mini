@@ -6,7 +6,7 @@ development:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: pokeapp_development
-      
+
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -124,6 +124,13 @@ development:
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
+    production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true
 test:
   clients:
     default:
