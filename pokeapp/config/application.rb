@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
-
+ config.generators do |g|
+   g.orm :mongoid
+ end
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
