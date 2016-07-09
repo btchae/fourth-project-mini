@@ -124,13 +124,6 @@ development:
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
-    production:
-  sessions:
-    default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
-      options:
-        skip_version_check: true
-        safe: true
 test:
   clients:
     default:
@@ -141,3 +134,10 @@ test:
         read:
           mode: primary
         max_pool_size: 1
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true
