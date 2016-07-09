@@ -2,7 +2,7 @@ development:
   # Configure available database clients. (required)
   clients:
     # Defines the default client. (required)
-    default: mongoid_dev
+    default: 
       uri: <%= ENV['MONGOHQ_URL'] %>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
