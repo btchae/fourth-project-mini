@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :startgame, :mudkip, :treecko, :torchic, :secretbase, :littleroot, :r101, :r101_capture, :oldale_town, :r103, :r102, :petalburg_city]
   def index
-    @users = User.all.to_a
+    the_users = User.all.to_a
+    @users = the_users
   end
   def show
   end
