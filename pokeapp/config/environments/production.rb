@@ -1,5 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+require 'mongo'
+puts Gem.loaded_specs["mongo"].version
+
+mongo_uri = ENV['MONGOHQ_URL']
+client = Mongo::Client.new(mongo_uri);
+db = client.database
+db.collection_names.each{|name| puts name }
  config.generators do |g|
    g.orm :mongoid
  end
